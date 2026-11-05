@@ -78,8 +78,14 @@ with st.sidebar:
                               help="Usá el mismo formato de columnas que el archivo original.")
     st.caption("Por defecto se usan los datos de los Briefs 01 a 05 del equipo.")
 
-df = leer(subido if subido else BASE / "datos" / "indicadores.csv")
-rel = leer(BASE / "datos" / "relaciones.csv")
+def ruta(nombre):
+    """Busca el CSV en la carpeta datos/ o, si no está, junto a app.py."""
+    en_datos = BASE / "datos" / nombre
+    return en_datos if en_datos.exists() else BASE / nombre
+
+
+df = leer(subido if subido else ruta("indicadores.csv"))
+rel = leer(ruta("relaciones.csv"))
 
 
 def s(ind, cat=None, medida=None, eje=None):
