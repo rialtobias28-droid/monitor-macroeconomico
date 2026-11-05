@@ -1,0 +1,17 @@
+origen,destino,efecto,mecanismo,evidencia,briefs
+Inflación,Salario real,−,Los aumentos nominales se licúan con la suba de precios (ilusión monetaria).,"Salario medio +37,3% nominal con IPC +32,7%: apenas +3,5% real, y −5,1% en el último trimestre.",01-02
+Inflación,Resultado fiscal real,−,"Ingresos y gastos se registran en pesos corrientes; al deflactar, el superávit se achica.","Resultado primario +11,6% nominal pero −15,9% real; el financiero cae 45,4% real.",04
+Inflación,Tipo de cambio real,−,"Si los precios internos suben más rápido que el dólar, el peso se aprecia en términos reales.","Dólar mayorista ≈ $1.500; ITCRM 85,5, un 24,5% bajo su promedio histórico y −9,5% en el 1S 2026.",03 · 05
+Inflación,Tasa de interés real,−,Una tasa nominal por debajo de la inflación implica un costo real negativo del dinero.,BADLAR ≈ 22% TNA frente a inflación ≈ 33%: tasa real ≈ −8% (aproximación ex post).,04 · 05
+Tipo de cambio real,Exportaciones y saldo comercial,+,Un TCRM bajo encarece en dólares los costos internos y resta competitividad a los sectores no energéticos.,"NEA (+14,6%) y Cuyo (+14,1%) crecen muy por debajo del total (+24,6%); el salto lo explican petróleo y minería.",03
+Tipo de cambio real,Salario real,−,La apreciación abarata los bienes importados y sostiene el poder de compra.,"El salario real sube 3,5% interanual en un contexto de peso apreciado.",01-02 · 05
+Tipo de cambio real,Deuda pública en USD,−,"Con el peso apreciado, la deuda emitida en pesos vale más medida en dólares.","Títulos en moneda nacional +18,3% en USD: explican ≈ USD 29.000 MM de los USD 30.650 MM de aumento.",03 · 04
+Exportaciones y saldo comercial,Compras del BCRA,+,El superávit genera divisas que se liquidan en el MULC y permiten al BCRA comprar.,Superávit de USD 2.187 MM en agosto; el BCRA compró USD 770 MM.,03
+Compras del BCRA,Reservas,+,"Las compras netas se acumulan como reservas, descontados pagos y valuaciones.",Compras ≈ USD 6.300 MM en el 1S; brutas de ≈ USD 45.000 MM (jun) a 49.700 MM (ago); netas ≈ USD 420 MM.,03 · 05
+Reservas,Inflación,−,Más reservas reducen el riesgo de una devaluación brusca y ayudan a anclar expectativas.,"El Brief 05 las presenta como un seguro frente a devaluaciones desordenadas, aunque las netas siguen siendo bajas.",05
+Tasa de interés real,Crédito en pesos,−,"Una tasa real baja abarata el crédito; si aun así no crece, la restricción está en la demanda o en el riesgo.","Con tasa real ≈ −8%, el crédito en pesos sigue estancado en ≈ 9% del PIB (+0,9% real).",05
+Crédito en USD,Exportaciones y saldo comercial,+,El financiamiento en dólares llega a quien tiene ingresos en dólares: los exportadores.,"Crédito en USD +46% (stock USD 24.200 MM); petróleo +47,7% y Patagonia +51,7%.",03 · 05
+Salario real,Actividad interna,+,El poder de compra sostiene el consumo y el mercado interno.,"Comercio (+1,8%), administración pública (+1,5%) y enseñanza (+0,4%) apenas empatan con la inflación.",01-02 · 05
+Crédito en pesos,Actividad interna,+,El crédito financia capital de trabajo y consumo.,Crédito en pesos sin crecimiento real relevante y M2 privado real ≈ −6%.,05
+Actividad interna,Resultado fiscal real,+,La recaudación acompaña el nivel de actividad.,"Recaudación tributaria −5,2% real; ingresos totales −4,2% real.",04
+Gasto en personal y dotación,Resultado fiscal real,−,Menos gasto salarial compensa en parte la caída real de los ingresos.,"Dotación de la APN −6,7%; gasto en personal −9,8% real, en 1,61% del PIB.",04
