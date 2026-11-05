@@ -339,20 +339,6 @@ with tabs[4]:
 
 # ================================================================ RELACIONES
 with tabs[5]:
-    st.subheader("Una misma inflación, dos lecturas")
-    nr = s("Variación nominal vs real")
-    orden = nr[nr["medida"] == "real"].sort_values("valor")["categoria"].tolist()
-    fig = go.Figure()
-    for med, color in [("nominal", C["nominal"]), ("real", C["real"])]:
-        d = nr[nr["medida"] == med].set_index("categoria").loc[orden]
-        fig.add_trace(go.Bar(y=orden, x=d["valor"], name=med.capitalize(), orientation="h", marker_color=color,
-                             text=[fmt(x, 1, True) + "%" for x in d["valor"]], textposition="outside"))
-    fig.update_layout(barmode="group", title=f"Variación interanual nominal vs real con inflación ≈ {fmt(infl)}%")
-    fig.add_vline(x=0, line_color=C["gris"])
-    mostrar(st, estilo(fig, 520))
-    st.caption("Todo lo que en pesos corrientes parece crecer pierde entre 30 y 35 puntos al descontar la inflación. "
-               "Por eso salarios (Brief 01-02), cuentas fiscales (Brief 04) y tasas (Brief 05) cuentan historias distintas según cómo se midan.")
-
     st.subheader("Mapa de relaciones entre variables")
     POS = {"Inflación": (0, 0.3), "Salario real": (-2.4, 1.8), "Actividad interna": (-3.6, 0.2),
            "Resultado fiscal real": (-2.4, -1.4), "Gasto en personal y dotación": (-3.8, -2.7),
