@@ -311,7 +311,7 @@ with tabs[4]:
                  color="concepto", color_discrete_map={"BADLAR (TNA)": C["nominal"], "Inflación interanual": C["alerta"], "Tasa real": C["baja"]},
                  title="Costo real del dinero ≈ (1 + tasa) / (1 + inflación) − 1")
     mostrar(c1, estilo(fig, 380, leyenda=False))
-    c1.caption("Aproximación ex post con la inflación interanual del Brief 04. Responde al comentario docente: el Brief 05 presentaba la fórmula pero no el cálculo.")
+    c1.caption("El Brief 05 presenta la fórmula de la tasa real; acá se calcula con la inflación interanual del Brief 04 (aproximación ex post).")
 
     cr = pd.DataFrame({"crédito": ["En pesos (real)", "En dólares"],
                        "var": [v("Crédito en pesos al sector privado (var. interanual)", "2026"),
@@ -322,20 +322,42 @@ with tabs[4]:
     mostrar(c2, estilo(fig, 380, leyenda=False))
 
     c1, c2 = st.columns(2)
-    res = pd.DataFrame({"momento": ["Brutas jun 2026", "Brutas ago 2026", "Netas ago 2026"],
-                        "valor": [v("Reservas internacionales brutas", "Jun 2026"), v("Reservas internacionales brutas", "Ago 2026"),
-                                  v("Reservas internacionales netas", "Ago 2026")]})
-    fig = px.bar(res, x="momento", y="valor", text=res["valor"].map(lambda x: fmt(x, 0)),
-                 color_discrete_sequence=[C["real"]], title="Reservas internacionales (MM USD)")
-    mostrar(c1, estilo(fig, 360, leyenda=False))
-    c1.caption("Junio: punto medio del rango 43.000–47.000 del Brief 05. Compras netas del BCRA en el 1S: ≈ USD 6.300 MM.")
+    res = s("Reservas internacionales brutas", eje="Monetario y financiero")
+    fig = go.Figure(go.Scatter(x=res["periodo"], y=res["valor"], mode="lines+markers+text", line=dict(color=C["real"], width=3),
+                               text=[fmt(x, 0) if i in (0, len(res) - 1) else "" for i, x in enumerate(res["valor"])],
+                               textposition="top center", name="Brief 05"))
+    fig.add_trace(go.Scatter(x=["Ago 2026"], y=[v("Reservas internacionales brutas", "Ago 2026")], mode="markers+text",
+                             marker=dict(color=C["gris"], size=10), text=[fmt(v("Reservas internacionales brutas", "Ago 2026"), 0)],
+                             textposition="top center", name="Ago 2026 (Brief 03)"))
+    fig.update_layout(title="Reservas brutas del BCRA (MM USD)", yaxis_range=[39000, 52000])
+    mostrar(c1, estilo(fig, 360))
+    c1.caption(f"Compras netas del BCRA en el 1S: ≈ USD {fmt(v('Compras netas de divisas del BCRA', '1S 2026'), 0)} MM. "
+               f"Son un flujo y no se trasladan uno a uno al stock. Reservas netas en agosto: ≈ USD {fmt(v('Reservas internacionales netas', 'Ago 2026'), 0)} MM.")
 
-    liq = pd.DataFrame({"agregado": ["Base monetaria real", "M2 privado real"],
-                        "var": [v("Base monetaria real (var. interanual)", "2026"), v("M2 privado transaccional real (var. interanual)", "2026")]})
-    fig = px.bar(liq, x="agregado", y="var", text=liq["var"].map(lambda x: fmt(x, 0, True) + "%"),
-                 color_discrete_sequence=[C["baja"]], title="Liquidez: agregados reales (var. ia)")
+    liq = s("Índice de agregados monetarios")
+    fig = px.line(liq, x="periodo", y="valor", markers=True, text=liq["valor"].map(lambda x: fmt(x, 1)),
+                  color_discrete_sequence=[C["real"]], title="Liquidez: índice de agregados monetarios (ene 2025 = 100)")
+    fig.update_traces(textposition="top center")
+    fig.update_layout(yaxis_range=[60, 108])
     mostrar(c2, estilo(fig, 360, leyenda=False))
-    c2.caption(f"Base monetaria ≈ {fmt(v('Base monetaria / PIB', '2026'))}% del PIB. Sirve como indicador de liquidez, el punto que el comentario docente marcó como faltante.")
+    c2.caption(f"M2 privado transaccional: {fmt(v('M2 privado transaccional real (var. interanual)', '1S 2026'), 0, True)}% real interanual. "
+               "Tocó un piso en enero de 2026 y desde ahí se recupera, sin volver al nivel de 2025.")
+
+    c1, c2 = st.columns(2)
+    it = s("ITCRM", eje="Monetario y financiero")
+    fig = px.line(it, x="periodo", y="valor", markers=True, text=it["valor"].map(lambda x: fmt(x, 1)),
+                  color_discrete_sequence=[C["baja"]], title="Tipo de cambio real multilateral, 1S 2026")
+    fig.update_traces(textposition="top center")
+    fig.update_layout(yaxis_range=[82, 98])
+    mostrar(c1, estilo(fig, 340, leyenda=False))
+    c1.caption(f"{fmt(v('ITCRM (var. acumulada)', '1S 2026'), 1, True)}% entre enero y junio: apreciación real del peso y menor competitividad-precio.")
+
+    c2.markdown("**Diagnóstico del Brief 05**")
+    c2.markdown("Las condiciones financieras muestran señales de mejora en algunas dimensiones, pero siguen siendo desiguales:\n"
+                "- **Mejoran:** reservas brutas en alza y crédito en dólares creciendo más de 46%.\n"
+                "- **Siguen débiles:** liquidez en pesos por debajo de 2025 y crédito en pesos casi sin crecimiento real.\n"
+                "- **Presión:** la apreciación real afecta a los sectores transables.\n\n"
+                "Recomendación: promover el financiamiento productivo en pesos para PyMEs y vigilar la exposición cambiaria de quienes se endeudan en dólares.")
 
 # ================================================================ RELACIONES
 with tabs[5]:
