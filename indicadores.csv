@@ -143,19 +143,31 @@ brief,eje,indicador,categoria,periodo,valor,unidad,medida,nota
 04,Fiscal,Ingreso medio de asalariados públicos,,1T 2025,12158,$ constantes,real,
 04,Fiscal,Ingreso medio de asalariados públicos,,1T 2026,1282433,$,nominal,
 04,Fiscal,Ingreso medio de asalariados públicos,,1T 2026,11946,$ constantes,real,
-05,Monetario y financiero,Base monetaria real (var. interanual),,2026,-9,%,real,Caída anual promedio frente a 2025
-05,Monetario y financiero,Base monetaria / PIB,,2026,3.9,% del PIB,,
-05,Monetario y financiero,M2 privado transaccional real (var. interanual),,2026,-6,%,real,El texto del brief no aclara el signo; la ficha técnica indica −6%
-05,Monetario y financiero,Compras netas de divisas del BCRA,,1S 2026,6300,MM USD,,Aproximado
-05,Monetario y financiero,Reservas internacionales brutas,,Jun 2026,45000,MM USD,,El brief da un rango de 43.000 a 47.000; se usa el punto medio
-05,Monetario y financiero,Tasa BADLAR bancos privados,,2S 2026,22,% TNA,nominal,Rango 21% a 23%; se usa el punto medio
-05,Monetario y financiero,Tasas de corto plazo (pases y cauciones),,2S 2026,20.5,% TNA,nominal,
+05,Monetario y financiero,M2 privado transaccional real (var. interanual),,1S 2026,-6,%,real,Indicador principal de liquidez en la versión actualizada
+05,Monetario y financiero,Base monetaria real (var. interanual),,2026,-9,%,real,Caída anual promedio frente a 2025; el brief aclara que no equivale al M2
+05,Monetario y financiero,Índice de agregados monetarios,,Ene 2025,100,índice (ene 2025 = 100),real,Valor leído del gráfico del Brief 05
+05,Monetario y financiero,Índice de agregados monetarios,,Sep 2025,86.5,índice (ene 2025 = 100),real,Valor leído del gráfico del Brief 05
+05,Monetario y financiero,Índice de agregados monetarios,,Ene 2026,71.1,índice (ene 2025 = 100),real,Valor leído del gráfico del Brief 05
+05,Monetario y financiero,Índice de agregados monetarios,,Jun 2026,74.2,índice (ene 2025 = 100),real,Valor leído del gráfico del Brief 05
+05,Monetario y financiero,Índice de agregados monetarios,,Oct 2026,78.5,índice (ene 2025 = 100),real,Valor leído del gráfico del Brief 05
+05,Monetario y financiero,Reservas internacionales brutas,,Ene 2026,41200,MM USD,,Dato de cierre de mes leído del gráfico del Brief 05
+05,Monetario y financiero,Reservas internacionales brutas,,Feb 2026,42500,MM USD,,Dato de cierre de mes leído del gráfico del Brief 05
+05,Monetario y financiero,Reservas internacionales brutas,,Mar 2026,43800,MM USD,,Dato de cierre de mes leído del gráfico del Brief 05
+05,Monetario y financiero,Reservas internacionales brutas,,Abr 2026,44900,MM USD,,Dato de cierre de mes leído del gráfico del Brief 05
+05,Monetario y financiero,Reservas internacionales brutas,,May 2026,45500,MM USD,,Dato de cierre de mes leído del gráfico del Brief 05
+05,Monetario y financiero,Reservas internacionales brutas,,Jun 2026,46300,MM USD,,Dato de cierre de mes leído del gráfico del Brief 05
+05,Monetario y financiero,Compras netas de divisas del BCRA,,1S 2026,6300,MM USD,,"Aproximado; es un flujo, no equivale a la suba del stock"
+05,Monetario y financiero,Tasa BADLAR bancos privados,,1S 2026,22,% TNA,nominal,Referencia promedio del rango 21% a 23%
+05,Monetario y financiero,Tasas de corto plazo (pases y cauciones),,1S 2026,20.5,% TNA,nominal,
 05,Monetario y financiero,Crédito en pesos al sector privado / PIB,,2026,9.1,% del PIB,,"Rango 9% a 9,2%"
 05,Monetario y financiero,Crédito en pesos al sector privado (var. interanual),,2026,0.9,%,real,"Rango 0,5% a 1,3%"
 05,Monetario y financiero,Crédito en dólares al sector privado (var. interanual),,2026,46,%,,Superior al 46%
 05,Monetario y financiero,Crédito en dólares al sector privado (stock),,2026,24200,MM USD,,
-05,Monetario y financiero,ITCRM,,1S 2026,85.5,índice,,Promedio 85 a 86 puntos
-05,Monetario y financiero,ITCRM (var. acumulada),,1S 2026,-9.5,%,real,Apreciación real
+05,Monetario y financiero,ITCRM,,Ene 2026,94.5,índice,,Valor del gráfico del Brief 05
+05,Monetario y financiero,ITCRM,,Mar 2026,92.1,índice,,Valor del gráfico del Brief 05
+05,Monetario y financiero,ITCRM,,May 2026,88.2,índice,,Valor del gráfico del Brief 05
+05,Monetario y financiero,ITCRM,,Jun 2026,85.5,índice,,Valor del gráfico del Brief 05
+05,Monetario y financiero,ITCRM (var. acumulada),,1S 2026,-9.5,%,real,"Apreciación real de enero a junio (94,5 a 85,5)"
 04,Transversal,Inflación interanual,,Ene-ago 2026,33.2,%,,Implícita en el Brief 04 (relación entre series nominales y reales)
 01-02,Transversal,Inflación interanual,,2026-T1,32.69,%,,"IPC trimestralizado, 2025-T1 a 2026-T1"
 Cruce,Transversal,Tasa de interés real (BADLAR),,2026,-8.4,%,real,Aproximación ex post: BADLAR 22% vs inflación interanual del Brief 04. No figura en el Brief 05.
