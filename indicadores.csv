@@ -159,6 +159,10 @@ brief,eje,indicador,categoria,periodo,valor,unidad,medida,nota
 05,Monetario y financiero,Compras netas de divisas del BCRA,,1S 2026,6300,MM USD,,"Aproximado; es un flujo, no equivale a la suba del stock"
 05,Monetario y financiero,Tasa BADLAR bancos privados,,1S 2026,22,% TNA,nominal,Referencia promedio del rango 21% a 23%
 05,Monetario y financiero,Tasas de corto plazo (pases y cauciones),,1S 2026,20.5,% TNA,nominal,
+05,Monetario y financiero,Referencias de tasas,BADLAR mínima,1S 2026,21,% TNA,nominal,Referencia informada en el Brief 05
+05,Monetario y financiero,Referencias de tasas,BADLAR promedio,1S 2026,22,% TNA,nominal,Referencia informada en el Brief 05
+05,Monetario y financiero,Referencias de tasas,BADLAR máxima,1S 2026,23,% TNA,nominal,Referencia informada en el Brief 05
+05,Monetario y financiero,Referencias de tasas,Pases y cauciones,1S 2026,20.5,% TNA,nominal,Referencia informada en el Brief 05
 05,Monetario y financiero,Crédito en pesos al sector privado / PIB,,2026,9.1,% del PIB,,"Rango 9% a 9,2%"
 05,Monetario y financiero,Crédito en pesos al sector privado (var. interanual),,2026,0.9,%,real,"Rango 0,5% a 1,3%"
 05,Monetario y financiero,Crédito en dólares al sector privado (var. interanual),,2026,46,%,,Superior al 46%

@@ -48,9 +48,19 @@ def var(a, b):
 
 
 @st.cache_data
-def leer(origen) -> pd.DataFrame:
+def _leer(origen, version) -> pd.DataFrame:
     df = pd.read_csv(origen, dtype={"brief": str})
     return df.fillna({"categoria": "", "medida": "", "nota": ""})
+
+
+def leer(origen) -> pd.DataFrame:
+    """Lee un CSV. Si el archivo cambia (por ejemplo, al subir uno nuevo a GitHub), se vuelve a leer."""
+    if isinstance(origen, Path):
+        st_ = origen.stat()
+        version = (st_.st_mtime, st_.st_size)
+    else:
+        version = None
+    return _leer(origen, version)
 
 
 def kpi(col, titulo, valor, detalle, estado, fuente):
@@ -305,13 +315,15 @@ with tabs[3]:
 with tabs[4]:
     st.markdown("**Pregunta del Brief 05:** ¿las condiciones monetarias y financieras favorecen o restringen la actividad?")
     c1, c2 = st.columns(2)
-    tasas = pd.DataFrame({"concepto": ["BADLAR (TNA)", "Inflación interanual", "Tasa real"],
-                          "valor": [22.0, infl, tasa_real]})
-    fig = px.bar(tasas, x="concepto", y="valor", text=tasas["valor"].map(lambda x: fmt(x, 1) + "%"),
-                 color="concepto", color_discrete_map={"BADLAR (TNA)": C["nominal"], "Inflación interanual": C["alerta"], "Tasa real": C["baja"]},
-                 title="Costo real del dinero ≈ (1 + tasa) / (1 + inflación) − 1")
+    tasas = s("Referencias de tasas")
+    fig = px.bar(tasas, x="categoria", y="valor", text=tasas["valor"].map(lambda x: fmt(x, 1) + "%"),
+                 color="categoria", title="Referencias de tasas, 1S 2026 (% TNA)",
+                 color_discrete_map={"BADLAR mínima": C["nominal"], "BADLAR promedio": C["real"],
+                                     "BADLAR máxima": C["nominal"], "Pases y cauciones": C["gris"]})
+    fig.update_layout(yaxis_range=[0, 27])
     mostrar(c1, estilo(fig, 380, leyenda=False))
-    c1.caption("El Brief 05 presenta la fórmula de la tasa real; acá se calcula con la inflación interanual del Brief 04 (aproximación ex post).")
+    c1.caption(f"Son referencias del período, no una serie mensual. Frente a una inflación interanual de ≈ {fmt(infl)}% (Brief 04), "
+               f"la BADLAR promedio implica una tasa real de ≈ {fmt(tasa_real)}%: el costo del dinero es negativo en términos reales.")
 
     cr = pd.DataFrame({"crédito": ["En pesos (real)", "En dólares"],
                        "var": [v("Crédito en pesos al sector privado (var. interanual)", "2026"),
